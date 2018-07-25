@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="UartWindow">
+            <connections>
+                <outlet property="backStringTextView" destination="tGW-zZ-Xme" id="g9g-Oh-Ktz"/>
+                <outlet property="fixPortName" destination="8IF-aY-7Dz" id="8Oy-sd-rcQ"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="669" height="491"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="669" height="491"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-EU-91W">
+                        <rect key="frame" x="20" y="51" width="629" height="307"/>
+                        <clipView key="contentView" ambiguous="YES" id="5um-tB-pKZ">
+                            <rect key="frame" x="1" y="1" width="627" height="305"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="tGW-zZ-Xme">
+                                    <rect key="frame" x="0.0" y="0.0" width="627" height="305"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="627" height="305"/>
+                                    <size key="maxSize" width="629" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="627" height="305"/>
+                                    <size key="maxSize" width="629" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="a1r-KE-TTk">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="oMl-VC-KL2">
+                            <rect key="frame" x="612" y="1" width="16" height="305"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-fh-vrH">
+                        <rect key="frame" x="574" y="13" width="81" height="32"/>
+                        <buttonCell key="cell" type="push" title="退出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="49b-lC-XrK">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="exitWindow:" target="-2" id="ZNv-3S-VOc"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOS-DX-NWI">
+                        <rect key="frame" x="18" y="360" width="79" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="串口返回：" id="FNe-Yd-nKu">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-3U-M7r">
+                        <rect key="frame" x="20" y="427" width="88" height="39"/>
+                        <buttonCell key="cell" type="square" title="连接治具" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c2w-T0-hiZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="connectFixture:" target="-2" id="fRk-gX-eMY"/>
+                        </connections>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zI2-dz-fdP">
+                        <rect key="frame" x="239" y="433" width="413" height="26"/>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="tR1-dG-Wrq">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="EgP-YS-t7n">
+                                <items>
+                                    <menuItem title="Fixture valve up" id="oXw-OU-qbN"/>
+                                    <menuItem title="Fixture valve down" id="I8H-xa-7pF"/>
+                                    <menuItem title="Water in on" id="4Nu-m6-U9q"/>
+                                    <menuItem title="Water in off" id="ykW-XG-RF2"/>
+                                    <menuItem title="air in on" id="tH2-k3-KPl"/>
+                                    <menuItem title="air in off" id="Iu3-Il-0FK"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="sendComand:" target="-2" id="xHY-4o-hEr"/>
+                        </connections>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IF-aY-7Dz">
+                        <rect key="frame" x="114" y="433" width="100" height="26"/>
+                        <popUpButtonCell key="cell" type="push" title="EW-Fix-A" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="i50-zd-iIW" id="EYX-BD-ugw">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="tcl-QV-hM4">
+                                <items>
+                                    <menuItem title="EW-Fix-A" state="on" id="i50-zd-iIW"/>
+                                    <menuItem title="EW-Fix-B" id="GN2-ea-2qB"/>
+                                    <menuItem title="EW-Fix-C" id="0Er-VF-SE6"/>
+                                    <menuItem title="EW-Fix-D" id="Noa-NB-Gsh"/>
+                                    <menuItem title="EW-Fix-E" id="xon-xj-OnK"/>
+                                    <menuItem title="EW-Fix-F" id="1aM-Yo-973"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="chooseFixtureName:" target="-2" id="OHR-3r-LJY"/>
+                        </connections>
+                    </popUpButton>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="4bR-Qp-pUw"/>
+            </connections>
+            <point key="canvasLocation" x="366.5" y="343.5"/>
+        </window>
+    </objects>
+</document>
